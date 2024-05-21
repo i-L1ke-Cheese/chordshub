@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chordshub.Controller">
+   <ToolBar prefHeight="60.0" prefWidth="200.0">
+      <VBox.margin>
+         <Insets />
+      </VBox.margin>
+      <padding>
+         <Insets left="70.0" right="70.0" />
+      </padding>
+      <Button layoutX="484.0" layoutY="18.0" mnemonicParsing="false" onAction="#onClearSearchButtonPressed" prefHeight="40.0" prefWidth="140.0" text="Clear Search">
+         <font>
+            <Font name="Ebrima" size="20.0" />
+         </font>
+      </Button>
+      <TextField id="searchbar" fx:id="searchbar" onKeyReleased="#onSearchbarChanged" prefHeight="43.0" prefWidth="320.0">
+         <font>
+            <Font name="Ebrima" size="20.0" />
+         </font>
+      </TextField>
+      <Button layoutX="10.0" layoutY="28.0" mnemonicParsing="false" onAction="#onTonenButtonPressed" prefHeight="40.0" prefWidth="140.0" text="tonen">
+         <font>
+            <Font name="Ebrima" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="478.0" layoutY="18.0" mnemonicParsing="false" onAction="#onAkkoordButtonPressed" prefHeight="40.0" prefWidth="140.0" text="akkoord">
+         <font>
+            <Font name="Ebrima" size="20.0" />
+         </font>
+      </Button>
+   </ToolBar>
+   <SplitPane dividerPositions="0.35" prefHeight="160.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+     <items>
+         <ListView fx:id="chordsListView" onMousePressed="#onListviewClicked" prefHeight="300.0" prefWidth="360.0" />
+         <AnchorPane fx:id="chordsInfoPane" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+            <children>
+               <Label fx:id="chordsInfoNameLabel" alignment="CENTER" layoutY="28.0" prefHeight="46.0" prefWidth="582.0" text="[select chord]" textAlignment="CENTER">
+                  <font>
+                     <Font name="Ebrima" size="30.0" />
+                  </font>
+               </Label>
+               <Canvas fx:id="chordsInfoCanvas" height="180.0" layoutX="21.0" layoutY="101.0" width="540.0" />
+               <Label fx:id="vergelijkbareChordsLabel" alignment="CENTER" layoutY="298.0" prefHeight="46.0" prefWidth="582.0" textAlignment="CENTER">
+                  <font>
+                     <Font name="Ebrima" size="25.0" />
+                  </font>
+               </Label>
+               <Label fx:id="vergelijkbareChord1" alignment="CENTER" layoutX="5.0" layoutY="344.0" prefHeight="46.0" prefWidth="582.0" textAlignment="CENTER">
+                  <font>
+                     <Font name="Ebrima" size="20.0" />
+                  </font>
+               </Label>
+               <Label fx:id="vergelijkbareChord2" alignment="CENTER" layoutX="7.0" layoutY="390.0" prefHeight="46.0" prefWidth="582.0" textAlignment="CENTER">
+                  <font>
+                     <Font name="Ebrima" size="20.0" />
+                  </font>
+               </Label>
+               <Label fx:id="vergelijkbareChord3" alignment="CENTER" layoutX="14.0" layoutY="436.0" prefHeight="46.0" prefWidth="582.0" textAlignment="CENTER">
+                  <font>
+                     <Font name="Ebrima" size="20.0" />
+                  </font>
+               </Label>
+            </children></AnchorPane>
+     </items>
+   </SplitPane>
+</VBox>
