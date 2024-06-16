@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class ChordsImageDrawer {
     private final Canvas canvas;
     private final GraphicsContext g;
-    private String[] notesOfKeys = new String[14];
+    private final String[] notesOfKeys;
     private double[][] positionsOfNotes;
 
     private final int noteCircleSize = 20;
@@ -136,9 +136,7 @@ public class ChordsImageDrawer {
 
     private double[][] addPosition(double[][] originalArray, double[] arrayToAdd) {
         double[][] result = new double[originalArray.length + 1][];
-        for (int i = 0; i < originalArray.length; i++) {
-            result[i] = originalArray[i];
-        }
+        System.arraycopy(originalArray, 0, result, 0, originalArray.length);
         result[originalArray.length] = arrayToAdd;
         return result;
     }
