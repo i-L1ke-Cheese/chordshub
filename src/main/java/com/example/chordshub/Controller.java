@@ -133,7 +133,7 @@ public class Controller implements Initializable {
         for(String t : types) {
             ArrayList<Chord> chordsWithThisType = this.chordsHubApp.getChordsWithType(t, chords);
             if(!chordsWithThisType.isEmpty()) {
-                Chord seperatorChord = new Chord(new ArrayList<Note>(), t, t);
+                Chord seperatorChord = new Chord(new ArrayList<>(), t, t);
                 seperatorChord.type = "separator";
                 newList.add(seperatorChord);
                 newList.addAll(chordsWithThisType);
