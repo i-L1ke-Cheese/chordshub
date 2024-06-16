@@ -1,5 +1,6 @@
 package com.example.chordshub;
 
+import com.example.chordshub.canvasDrawingClasses.ChordsImageDrawer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

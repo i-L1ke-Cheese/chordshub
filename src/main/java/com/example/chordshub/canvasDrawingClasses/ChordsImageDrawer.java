@@ -1,5 +1,7 @@
-package com.example.chordshub;
+package com.example.chordshub.canvasDrawingClasses;
 
+import com.example.chordshub.Chord;
+import com.example.chordshub.Note;
 import javafx.geometry.VPos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -108,30 +110,15 @@ public class ChordsImageDrawer {
 
     public void markNote(int index, boolean verlaagd, boolean verhoogd) {
         g.setFill(Color.RED);
+        NoteMarker marker;
         if(verlaagd) {
-            drawVerlaagdeNote(index);
+            marker = new VerlaagdeNoteMarker(canvas, noteCircleSize, smallNoteCircleSize, positionsOfNotes, keyWidth);
         } else if (verhoogd) {
-            drawVerhoogdeNote(index);
+            marker = new VerhoogdeNoteMarker(canvas, noteCircleSize, smallNoteCircleSize, positionsOfNotes, keyWidth);
         } else {
-            drawNote(index);
+            marker = new NormalNoteMarker(canvas, noteCircleSize, smallNoteCircleSize, positionsOfNotes, keyWidth);
         }
-    }
-    private void drawNote(int indexOfNote) {
-        double[] position = positionsOfNotes[indexOfNote];
-        g.fillOval(position[0] - ((double) noteCircleSize / 2), position[1] - ((double) noteCircleSize / 2), noteCircleSize, noteCircleSize);
-    }
-
-    private void drawVerlaagdeNote(int indexOfNote) {
-        double[] position = positionsOfNotes[indexOfNote];
-        double posx = position[0] - keyWidth / 2;
-        double posy = position[1] - 50 + this.smallNoteCircleSize;
-        g.fillOval(posx - ((double) smallNoteCircleSize / 2), posy - ((double) smallNoteCircleSize / 2), smallNoteCircleSize, smallNoteCircleSize);
-    }
-    private void drawVerhoogdeNote(int indexOfNote) {
-        double[] position = positionsOfNotes[indexOfNote];
-        double posx = position[0] + keyWidth / 2;
-        double posy = position[1] - 50 + this.smallNoteCircleSize;
-        g.fillOval(posx - ((double) smallNoteCircleSize / 2), posy - ((double) smallNoteCircleSize / 2), smallNoteCircleSize, smallNoteCircleSize);
+        marker.markNote(index);
     }
 
     private double[][] addPosition(double[][] originalArray, double[] arrayToAdd) {

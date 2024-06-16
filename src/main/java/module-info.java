@@ -7,4 +7,6 @@ module com.example.chordshub {
 
     opens com.example.chordshub to javafx.fxml;
     exports com.example.chordshub;
+    exports com.example.chordshub.canvasDrawingClasses;
+    opens com.example.chordshub.canvasDrawingClasses to javafx.fxml;
 }
