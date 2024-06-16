@@ -5,12 +5,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
 import java.net.URL;
@@ -36,7 +34,6 @@ public class Controller implements Initializable {
     private TextField searchbar;
     @FXML
     private ListView<Chord> chordsListView;
-    private Chord selectedChord;
 
     private ChordsHubApp chordsHubApp;
     private ChordsImageDrawer imageDrawer;
@@ -83,11 +80,10 @@ public class Controller implements Initializable {
     protected void onListviewClicked() {
         Chord clickedItem = chordsListView.getSelectionModel().getSelectedItem();
         if(!clickedItem.type.equalsIgnoreCase("separator")) {
-            this.selectedChord = clickedItem;
-            this.chordsInfoNameLabel.setText(this.selectedChord.toString());
+            this.chordsInfoNameLabel.setText(clickedItem.toString());
             resetCanvas();
-            this.imageDrawer.markChord(this.selectedChord);
-            updateVergelijkbareAkkoorden(chordsHubApp.getSimilarChords(selectedChord));
+            this.imageDrawer.markChord(clickedItem);
+            updateVergelijkbareAkkoorden(chordsHubApp.getSimilarChords(clickedItem));
         }
     }
 

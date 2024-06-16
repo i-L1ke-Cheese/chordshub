@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ChordsHubApp {
-    private FileIOManager ioManager;
+    private final FileIOManager ioManager;
     private ArrayList<Chord> chords;
 
     public ChordsHubApp(FileIOManager ioManager) {
@@ -29,10 +29,6 @@ public class ChordsHubApp {
 
     public ArrayList<Chord> searchChords(String keyWord) {
         return searchChords(keyWord, this.chords);
-    }
-
-    public ArrayList<Chord> getChordsWithType(String type) {
-        return this.getChordsWithType(type, this.chords);
     }
 
     public ArrayList<Chord> getChordsWithType(String type, ArrayList<Chord> chordsToSearch) {

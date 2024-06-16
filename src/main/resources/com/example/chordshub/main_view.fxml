@@ -42,37 +42,39 @@
       </Button>
    </ToolBar>
    <SplitPane dividerPositions="0.35" prefHeight="160.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-     <items>
-         <ListView fx:id="chordsListView" onMousePressed="#onListviewClicked" prefHeight="300.0" prefWidth="360.0" />
-         <AnchorPane fx:id="chordsInfoPane" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
-            <children>
-               <Label fx:id="chordsInfoNameLabel" alignment="CENTER" layoutY="28.0" prefHeight="46.0" prefWidth="582.0" text="[select chord]" textAlignment="CENTER">
-                  <font>
-                     <Font name="Ebrima" size="30.0" />
-                  </font>
-               </Label>
-               <Canvas fx:id="chordsInfoCanvas" height="180.0" layoutX="21.0" layoutY="101.0" width="540.0" />
-               <Label fx:id="vergelijkbareChordsLabel" alignment="CENTER" layoutY="298.0" prefHeight="46.0" prefWidth="582.0" textAlignment="CENTER">
-                  <font>
-                     <Font name="Ebrima" size="25.0" />
-                  </font>
-               </Label>
-               <Label fx:id="vergelijkbareChord1" alignment="CENTER" layoutX="5.0" layoutY="344.0" prefHeight="46.0" prefWidth="582.0" textAlignment="CENTER">
-                  <font>
-                     <Font name="Ebrima" size="20.0" />
-                  </font>
-               </Label>
-               <Label fx:id="vergelijkbareChord2" alignment="CENTER" layoutX="7.0" layoutY="390.0" prefHeight="46.0" prefWidth="582.0" textAlignment="CENTER">
-                  <font>
-                     <Font name="Ebrima" size="20.0" />
-                  </font>
-               </Label>
-               <Label fx:id="vergelijkbareChord3" alignment="CENTER" layoutX="14.0" layoutY="436.0" prefHeight="46.0" prefWidth="582.0" textAlignment="CENTER">
-                  <font>
-                     <Font name="Ebrima" size="20.0" />
-                  </font>
-               </Label>
-            </children></AnchorPane>
-     </items>
+      <ListView fx:id="chordsListView" onMousePressed="#onListviewClicked" prefHeight="300.0" prefWidth="360.0"/>
+      <AnchorPane fx:id="chordsInfoPane" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <Label fx:id="chordsInfoNameLabel" alignment="CENTER" layoutY="28.0" prefHeight="46.0" prefWidth="582.0"
+                text="[select chord]" textAlignment="CENTER">
+            <font>
+               <Font name="Ebrima" size="30.0"/>
+            </font>
+         </Label>
+         <Canvas fx:id="chordsInfoCanvas" height="180.0" layoutX="21.0" layoutY="101.0" width="540.0"/>
+         <Label fx:id="vergelijkbareChordsLabel" alignment="CENTER" layoutY="298.0" prefHeight="46.0"
+                prefWidth="582.0" textAlignment="CENTER">
+            <font>
+               <Font name="Ebrima" size="25.0"/>
+            </font>
+         </Label>
+         <Label fx:id="vergelijkbareChord1" alignment="CENTER" layoutX="5.0" layoutY="344.0" prefHeight="46.0"
+                prefWidth="582.0" textAlignment="CENTER">
+            <font>
+               <Font name="Ebrima" size="20.0"/>
+            </font>
+         </Label>
+         <Label fx:id="vergelijkbareChord2" alignment="CENTER" layoutX="7.0" layoutY="390.0" prefHeight="46.0"
+                prefWidth="582.0" textAlignment="CENTER">
+            <font>
+               <Font name="Ebrima" size="20.0"/>
+            </font>
+         </Label>
+         <Label fx:id="vergelijkbareChord3" alignment="CENTER" layoutX="14.0" layoutY="436.0" prefHeight="46.0"
+                prefWidth="582.0" textAlignment="CENTER">
+            <font>
+               <Font name="Ebrima" size="20.0"/>
+            </font>
+         </Label>
+      </AnchorPane>
    </SplitPane>
 </VBox>
