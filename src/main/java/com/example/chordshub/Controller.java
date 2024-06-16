@@ -71,7 +71,7 @@ public class Controller implements Initializable {
         chordsListView.getItems().clear();
 
         ArrayList<Chord> chordsSearched = chordsHubApp.searchChords(searchbar.getText());
-        chordsSearched = addSeperators(chordsSearched);
+        chordsSearched = addSeparators(chordsSearched);
 
         ObservableList<Chord> oListChordsSearched = FXCollections.observableArrayList(chordsSearched);
         chordsListView.getItems().addAll(oListChordsSearched);
@@ -109,7 +109,7 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        this.chordsHubApp = new ChordsHubApp(new FileIOManager());
+        this.chordsHubApp = new ChordsHubApp();
         this.imageDrawer = new ChordsImageDrawer(chordsInfoCanvas);
 
         resetSearchBar();
@@ -123,11 +123,11 @@ public class Controller implements Initializable {
 
     private void updateListView(ArrayList<Chord> chordsForListView) {
         chordsListView.getItems().clear();
-        ObservableList<Chord> oListChords = FXCollections.observableArrayList(addSeperators(chordsForListView));
+        ObservableList<Chord> oListChords = FXCollections.observableArrayList(addSeparators(chordsForListView));
         chordsListView.getItems().addAll(oListChords);
     }
 
-    private ArrayList<Chord> addSeperators(ArrayList<Chord> chords) {
+    private ArrayList<Chord> addSeparators(ArrayList<Chord> chords) {
         ArrayList<Chord> newList = new ArrayList<>();
         String[] types = {"C", "D", "E", "F", "G", "A", "B"};
         for(String t : types) {

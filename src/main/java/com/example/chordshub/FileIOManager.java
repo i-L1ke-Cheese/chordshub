@@ -8,6 +8,18 @@ import java.util.Scanner;
 public class FileIOManager {
     public final String PATH_AKKOORDEN = "akkoorden.txt";
     public final String SEPERATOR = ",";
+    private static FileIOManager instance;
+
+    public FileIOManager() {
+        instance = this;
+    }
+
+    public static FileIOManager getInstance() {
+        if(instance == null) {
+            instance = new FileIOManager();
+        }
+        return instance;
+    }
 
     public ArrayList<String> readFile(String path) {
         ArrayList<String> data = new ArrayList<>();

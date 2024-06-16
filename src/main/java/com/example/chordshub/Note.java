@@ -1,9 +1,9 @@
 package com.example.chordshub;
 
 public class Note {
-    private String note;
-    private boolean verlaagd;
-    private boolean verhoogd;
+    private final String note;
+    private final boolean verlaagd;
+    private final boolean verhoogd;
 
     public Note(String note, boolean verhoogd, boolean verlaagd) {
         this.note = note;

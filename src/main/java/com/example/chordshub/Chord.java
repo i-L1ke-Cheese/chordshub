@@ -3,9 +3,9 @@ package com.example.chordshub;
 import java.util.ArrayList;
 
 public class Chord {
-    private ArrayList<Note> notes;
-    public String name;
-    public String fullName;
+    private final ArrayList<Note> notes;
+    public final String name;
+    public final String fullName;
     public String type;
 
     public Chord(ArrayList<Note> notes, String name, String fullName) {
@@ -44,9 +44,9 @@ public class Chord {
             return "######## " + this.name + " TYPE CHORDS ########";
         }
 
-        String notesString = "";
+        StringBuilder notesString = new StringBuilder();
         for(Note note : notes) {
-            notesString += ", " + note.toString();
+            notesString.append(", ").append(note.toString());
         }
 
         return this.name + " (" + this.fullName + ")" + notesString + ".";

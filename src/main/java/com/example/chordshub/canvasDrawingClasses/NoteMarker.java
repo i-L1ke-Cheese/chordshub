@@ -11,7 +11,7 @@ public abstract class NoteMarker {
     protected final int noteCircleSize;
     protected final double keyWidth;
 
-    protected double[][] positionsOfNotes;
+    protected final double[][] positionsOfNotes;
 
     public NoteMarker(Canvas canvas, int noteCircleSize, int smallNoteCircleSize, double[][] positionsOfNotes, double keyWidth) {
         this.g = canvas.getGraphicsContext2D();

@@ -6,16 +6,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ChordsHubApp {
-    private final FileIOManager ioManager;
     private ArrayList<Chord> chords;
 
-    public ChordsHubApp(FileIOManager ioManager) {
-        this.ioManager = ioManager;
-        this.chords = ioManager.getChordsFromFile();
+    public ChordsHubApp() {
+        this.chords = FileIOManager.getInstance().getChordsFromFile();
     }
 
     public ArrayList<Chord> getChords() {
-        this.chords = ioManager.getChordsFromFile();
+        this.chords = FileIOManager.getInstance().getChordsFromFile();
         return this.chords;
     }
 
@@ -72,8 +70,8 @@ public class ChordsHubApp {
         String[] data = stringMetTonen.split(" ");
         ArrayList<Note> tonenLijst = new ArrayList<>();
         for(String i : data) {
-            String[] chars = ioManager.splitStringToCharacters(i);
-            tonenLijst.add(ioManager.getToonFromData(chars));
+            String[] chars = FileIOManager.getInstance().splitStringToCharacters(i);
+            tonenLijst.add(FileIOManager.getInstance().getToonFromData(chars));
         }
         return getAkkoordFromTonen(tonenLijst);
     }

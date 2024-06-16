@@ -18,7 +18,6 @@ public class ChordsImageDrawer {
     private double[][] positionsOfNotes;
 
     private final int noteCircleSize = 20;
-    private final int smallNoteCircleSize = 13;
 
     private double keyWidth;
 
@@ -111,6 +110,7 @@ public class ChordsImageDrawer {
     public void markNote(int index, boolean verlaagd, boolean verhoogd) {
         g.setFill(Color.RED);
         NoteMarker marker;
+        int smallNoteCircleSize = 13;
         if(verlaagd) {
             marker = new VerlaagdeNoteMarker(canvas, noteCircleSize, smallNoteCircleSize, positionsOfNotes, keyWidth);
         } else if (verhoogd) {
